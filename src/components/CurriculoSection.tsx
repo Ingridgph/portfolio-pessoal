@@ -33,15 +33,15 @@ const formacao = [
 ];
 
 const habilidades = [
-  { nome: "PHP", nivel: 80, categoria: "Backend" },
-  { nome: "Laravel", nivel: 82, categoria: "Backend" },
-  { nome: "MySQL", nivel: 75, categoria: "Banco de Dados" },
-  { nome: "REST APIs", nivel: 78, categoria: "Backend" },
-  { nome: "Pest / TDD", nivel: 70, categoria: "Testes" },
-  { nome: "Git / GitHub", nivel: 80, categoria: "Ferramentas" },
-  { nome: "React", nivel: 60, categoria: "Frontend" },
-  { nome: "JavaScript", nivel: 65, categoria: "Frontend" },
-  { nome: "HTML & CSS", nivel: 75, categoria: "Frontend" },
+  { nome: "PHP", categoria: "Backend" },
+  { nome: "Laravel", categoria: "Backend" },
+  { nome: "MySQL", categoria: "Banco de Dados" },
+  { nome: "REST APIs", categoria: "Backend" },
+  { nome: "Pest", categoria: "Testes" },
+  { nome: "Git / GitHub", categoria: "Ferramentas" },
+  { nome: "React", categoria: "Frontend" },
+  { nome: "JavaScript", categoria: "Frontend" },
+  { nome: "HTML & CSS", categoria: "Frontend" },
 ];
 
 export default function CurriculoSection() {
@@ -153,7 +153,7 @@ export default function CurriculoSection() {
               Habilidades
             </motion.h3>
 
-            <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-3 justify-center">
               {habilidades.map((skill, i) => (
                 <motion.div
                   key={skill.nome}
@@ -161,26 +161,13 @@ export default function CurriculoSection() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true, margin: "-40px" }}
                   transition={{ duration: 0.5, delay: i * 0.07 }}
+                  className="flex items-center gap-2 px-4 py-2.5 rounded-lg"
+                  style={{ background: "var(--bg-primary)", border: "1px solid var(--border)" }}
                 >
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-2">
-                      <span className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>{skill.nome}</span>
-                      <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: "var(--accent-soft)", color: "var(--text-secondary)", fontSize: "0.65rem" }}>
-                        {skill.categoria}
-                      </span>
-                    </div>
-                    <span className="text-xs font-mono" style={{ color: "var(--accent-light)" }}>{skill.nivel}%</span>
-                  </div>
-                  <div className="h-1.5 rounded-full overflow-hidden" style={{ background: "var(--bg-primary)" }}>
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${skill.nivel}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.9, delay: i * 0.06, ease: "easeOut" }}
-                      className="h-full rounded-full"
-                      style={{ background: "linear-gradient(90deg, var(--accent) 0%, var(--accent-light) 100%)" }}
-                    />
-                  </div>
+                  <span className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>{skill.nome}</span>
+                  <span className="text-xs px-1.5 py-0.5 rounded" style={{ background: "var(--accent-soft)", color: "var(--text-secondary)", fontSize: "0.65rem" }}>
+                    {skill.categoria}
+                  </span>
                 </motion.div>
               ))}
             </div>
@@ -191,7 +178,7 @@ export default function CurriculoSection() {
             >
               <h3 className="text-sm font-semibold mb-4" style={{ color: "var(--text-secondary)" }}>Soft Skills</h3>
               <div className="flex flex-wrap gap-2">
-                {["Trabalho em Equipe", "Resolução de Problemas", "Aprendizado Contínuo", "Proatividade"].map((s) => (
+                {["Trabalho em Equipe", "Resolução de Problemas", "Aprendizado Contínuo", "Proatividade", "Comunicação", "Atenção aos Detalhes", "Pensamento Crítico", "Autonomia"].map((s) => (
                   <span key={s} className="px-3 py-1.5 rounded-lg text-xs font-medium"
                     style={{ background: "var(--bg-primary)", color: "var(--text-secondary)", border: "1px solid var(--border)" }}>
                     {s}
@@ -206,7 +193,7 @@ export default function CurriculoSection() {
             >
               <h3 className="text-sm font-semibold mb-4" style={{ color: "var(--text-secondary)" }}>Idiomas</h3>
               <div className="flex gap-4">
-                {[{ idioma: "Português", nivel: "Nativo" }, { idioma: "Inglês", nivel: "Básico" }].map((lang) => (
+                {[{ idioma: "Português", nivel: "Nativo" }, { idioma: "Inglês", nivel: "Intermediário" }].map((lang) => (
                   <div key={lang.idioma} className="flex-1 p-3 rounded-lg text-center"
                     style={{ background: "var(--bg-primary)", border: "1px solid var(--border)" }}>
                     <p className="text-sm font-medium" style={{ color: "var(--text-primary)" }}>{lang.idioma}</p>
