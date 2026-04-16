@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { LightRays } from "@/components/magicui/light-rays";
+import { DotPattern } from "@/components/magicui/dot-pattern";
 
 const skills = ["PHP", "Laravel", "MySQL", "REST APIs", "Pest", "React", "Git"];
 
@@ -61,8 +61,8 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center relative overflow-hidden pt-16">
-      {/* Light Rays */}
-      <LightRays className="opacity-60" />
+      {/* Dot Pattern interativo */}
+      <DotPattern />
 
       {/* Background glow */}
       <div
