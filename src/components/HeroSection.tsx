@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import { LightRays } from "@/components/magicui/light-rays";
 
 const skills = ["PHP", "Laravel", "MySQL", "REST APIs", "Pest", "React", "Git"];
 
@@ -60,6 +61,9 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="min-h-screen flex items-center relative overflow-hidden pt-16">
+      {/* Light Rays */}
+      <LightRays className="opacity-60" />
+
       {/* Background glow */}
       <div
         className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10 pointer-events-none"
@@ -122,7 +126,22 @@ export default function HeroSection() {
             <motion.p {...makeAnim(0.36)}
               className="text-sm md:text-base leading-relaxed max-w-lg"
               style={{ color: "var(--text-secondary)" }}>
-              Comecei na informática técnica, virei desenvolvedora, e agora escrevo código backend todos os dias. Gosto de entender como as coisas funcionam por dentro e de resolver problemas reais — não só fazer o teste passar.
+              Desenvolvedora Back-end com foco em{" "}
+              <span style={{ color: "var(--accent-light)", fontWeight: 500 }}>PHP e Laravel</span>
+              , dedicada a construir{" "}
+              <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>soluções eficientes, escaláveis e orientadas a resultados</span>
+              . Transformo regras de negócio complexas em{" "}
+              <span style={{ color: "var(--accent-light)", fontWeight: 500 }}>código limpo, organizado e de fácil manutenção</span>
+              .{" "}
+              <br className="hidden md:block" />
+              <br className="hidden md:block" />
+              Atuo diretamente na implementação de funcionalidades, interpretação de requisitos e estruturação de sistemas, sempre com atenção à{" "}
+              <span style={{ color: "var(--text-primary)", fontWeight: 500 }}>qualidade e performance</span>
+              . Tenho visão completa do desenvolvimento, com conhecimento em front-end que fortalece a entrega de aplicações consistentes.{" "}
+              <br className="hidden md:block" />
+              <br className="hidden md:block" />
+              <span style={{ color: "var(--accent-light)", fontWeight: 500 }}>Movida por desafios, aprendizado contínuo e evolução constante</span>
+              , busco criar soluções que não apenas funcionam, mas fazem a diferença.
             </motion.p>
 
             {/* Typewriter */}
