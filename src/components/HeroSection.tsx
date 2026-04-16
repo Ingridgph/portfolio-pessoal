@@ -1,8 +1,53 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const skills = ["PHP", "Laravel", "MySQL", "REST APIs", "Pest", "React", "Git", "TDD"];
+
+const frases = [
+  "vamos trabalhar juntos?",
+  "vamos desenvolver algo incrível?",
+  "vamos transformar ideias em código?",
+  "vamos construir o próximo projeto?",
+];
+
+function Typewriter() {
+  const [fraseIdx, setFraseIdx] = useState(0);
+  const [texto, setTexto] = useState("");
+  const [deletando, setDeletando] = useState(false);
+
+  useEffect(() => {
+    const frase = frases[fraseIdx];
+    let timeout: ReturnType<typeof setTimeout>;
+
+    if (!deletando && texto.length < frase.length) {
+      timeout = setTimeout(() => setTexto(frase.slice(0, texto.length + 1)), 55);
+    } else if (!deletando && texto.length === frase.length) {
+      timeout = setTimeout(() => setDeletando(true), 2200);
+    } else if (deletando && texto.length > 0) {
+      timeout = setTimeout(() => setTexto(frase.slice(0, texto.length - 1)), 30);
+    } else if (deletando && texto.length === 0) {
+      setDeletando(false);
+      setFraseIdx((i) => (i + 1) % frases.length);
+    }
+
+    return () => clearTimeout(timeout);
+  }, [texto, deletando, fraseIdx]);
+
+  return (
+    <span className="font-mono text-sm md:text-base" style={{ color: "var(--accent-light)" }}>
+      {texto}
+      <span
+        className="inline-block w-0.5 h-4 ml-0.5 align-middle"
+        style={{
+          background: "var(--accent)",
+          animation: "blink 1s step-end infinite",
+        }}
+      />
+    </span>
+  );
+}
 
 const makeAnim = (delay: number) => ({
   initial: { opacity: 0, y: 30 },
@@ -35,8 +80,8 @@ export default function HeroSection() {
               className="relative w-44 h-44 md:w-52 md:h-52 rounded-full animate-pulse-glow"
               style={{ background: "var(--bg-secondary)", border: "3px solid var(--accent)" }}
             >
-              {/* Substitua pelo componente Image com sua foto: */}
-              {/* <Image src="/foto.jpg" alt="Ingrid Gomes" fill className="rounded-full object-cover" /> */}
+              {/* Substitua pelo componente Image com sua foto:
+              <Image src="/foto.jpg" alt="Ingrid Gomes" fill className="rounded-full object-cover" /> */}
               <div className="w-full h-full rounded-full flex items-center justify-center">
                 <svg viewBox="0 0 100 100" className="w-24 h-24 opacity-30" fill="none">
                   <circle cx="50" cy="38" r="18" fill="var(--text-secondary)" />
@@ -78,13 +123,17 @@ export default function HeroSection() {
             <motion.p {...makeAnim(0.36)}
               className="text-sm md:text-base leading-relaxed max-w-lg"
               style={{ color: "var(--text-secondary)" }}>
-              Desenvolvedora backend em início de carreira com experiência prática em PHP e Laravel.
-              Busco oportunidade como desenvolvedora júnior para evoluir tecnicamente e contribuir
-              com soluções eficientes.
+              Código que resolve problemas de verdade. Construo backends robustos com PHP e Laravel,
+              APIs bem estruturadas e sistemas que não quebram quando mais precisam funcionar.
             </motion.p>
 
+            {/* Typewriter */}
+            <motion.div {...makeAnim(0.44)} className="flex items-center gap-2 min-h-[28px]">
+              <Typewriter />
+            </motion.div>
+
             {/* Botões */}
-            <motion.div {...makeAnim(0.48)}
+            <motion.div {...makeAnim(0.52)}
               className="flex flex-wrap gap-3 justify-center md:justify-start">
               <a
                 href="/curriculo_ingrid.pdf"
@@ -111,7 +160,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Tags de skill */}
-            <motion.div {...makeAnim(0.60)}
+            <motion.div {...makeAnim(0.64)}
               className="flex flex-wrap gap-2 justify-center md:justify-start">
               {skills.map((skill) => (
                 <span
@@ -130,7 +179,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 1.4, duration: 0.6 }}
+          transition={{ delay: 1.5, duration: 0.6 }}
           className="flex justify-center mt-16"
         >
           <button

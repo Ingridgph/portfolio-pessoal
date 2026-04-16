@@ -17,6 +17,9 @@ const techColors: Record<string, string> = {
   "REST APIs": "#F59E0B",
   Git: "#F05032",
   TDD: "#16A34A",
+  "Three.js": "#ffffff",
+  GSAP: "#88CE02",
+  Zustand: "#764ABC",
 };
 
 type Props = { params: Promise<{ slug: string }> };
