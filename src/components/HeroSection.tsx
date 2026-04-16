@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const skills = ["PHP", "Laravel", "MySQL", "REST APIs", "Pest", "React", "Git", "TDD"];
+const skills = ["PHP", "Laravel", "MySQL", "REST APIs", "Pest", "React", "Git"];
 
 const frases = [
   "vamos trabalhar juntos?",
@@ -114,17 +114,15 @@ export default function HeroSection() {
             </motion.h1>
 
             <motion.h2 {...makeAnim(0.24)}
-              className="text-lg md:text-xl font-medium"
-              style={{ color: "var(--text-secondary)" }}>
-              Desenvolvedora Backend{" "}
-              <span className="font-mono" style={{ color: "var(--accent-light)" }}>{"{ PHP · Laravel }"}</span>
+              className="text-lg md:text-xl font-semibold"
+              style={{ color: "var(--accent-light)" }}>
+              Desenvolvedora Backend
             </motion.h2>
 
             <motion.p {...makeAnim(0.36)}
               className="text-sm md:text-base leading-relaxed max-w-lg"
               style={{ color: "var(--text-secondary)" }}>
-              Código que resolve problemas de verdade. Construo backends robustos com PHP e Laravel,
-              APIs bem estruturadas e sistemas que não quebram quando mais precisam funcionar.
+              Comecei na informática técnica, virei desenvolvedora, e agora escrevo código backend todos os dias. Gosto de entender como as coisas funcionam por dentro e de resolver problemas reais — não só fazer o teste passar.
             </motion.p>
 
             {/* Typewriter */}

@@ -83,14 +83,15 @@ export default function ProjetosSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-60px" }}
           variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.12 } } }}
-          className="grid grid-cols-1 md:grid-cols-2 gap-6"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch"
         >
           {filtrados.map((projeto) => (
             <motion.div
               key={projeto.slug}
               variants={{ hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: "easeOut" } } }}
+              className="h-full"
             >
-              <Link href={`/projetos/${projeto.slug}`} className="block group">
+              <Link href={`/projetos/${projeto.slug}`} className="block group h-full">
                 <article
                   className="h-full rounded-xl p-6 flex flex-col gap-4 transition-all duration-300 group-hover:-translate-y-1"
                   style={{ background: "var(--bg-secondary)", border: "1px solid var(--border)" }}
