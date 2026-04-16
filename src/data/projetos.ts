@@ -34,7 +34,7 @@ Funcionalidades:
     descricaoCurta: "Este portfólio, construído com Next.js, TypeScript e Framer Motion com animações de scroll.",
     descricaoLonga: `Portfólio pessoal desenvolvido com as tecnologias mais modernas do ecossistema JavaScript.
 
-Construído com Next.js e React, com animações fluidas de scroll utilizando Framer Motion. Design com paleta de cores quentes e escuras, totalmente responsivo.
+Construído com Next.js e React, com animações fluidas de scroll utilizando Framer Motion. Design totalmente responsivo com sistema de cores via CSS Variables.
 
 Características:
 - Animações de entrada por scroll com Framer Motion
@@ -43,7 +43,27 @@ Características:
 - Seções: Hero, Projetos, Currículo e Contato`,
     tecnologias: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion", "React"],
     categoria: "Frontend",
-    linkGithub: "https://github.com/Ingridgph",
+    linkGithub: "https://github.com/Ingridgph/portifolio-noleto-iphones",
+  },
+  {
+    slug: "noleto-iphones",
+    titulo: "Noleto iPhones",
+    descricaoCurta: "Landing page de e-commerce com modelo 3D interativo, carrinho de compras e integração WhatsApp.",
+    descricaoLonga: `Template premium de loja virtual desenvolvido com Next.js 16, React 19 e TypeScript.
+
+Projeto com experiência de compra interativa: modelo 3D do produto renderizado com Three.js, animações de scroll com GSAP e Framer Motion, e carrinho de compras com integração direta ao WhatsApp.
+
+Funcionalidades:
+- Modelo 3D interativo com Three.js e React Three Fiber
+- Animações de scroll e transições com GSAP
+- Carrinho de compras com estado global via Zustand
+- Integração com WhatsApp para finalizar pedidos
+- Tema dark/light com CSS Variables
+- Layout responsivo (mobile-first)
+- Painel administrativo com CRUD de produtos`,
+    tecnologias: ["Next.js", "TypeScript", "Three.js", "GSAP", "Framer Motion", "Zustand", "Tailwind CSS"],
+    categoria: "Frontend",
+    linkGithub: "https://github.com/Ingridgph/portifolio-noleto-iphones",
   },
 ];
 
